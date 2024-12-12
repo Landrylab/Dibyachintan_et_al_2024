@@ -56,13 +56,12 @@ df_annotate_ppi = pd.pivot_table(df_annotate, index='mut_aa', columns='position_
                                  aggfunc=np.sum)
 df_annotate_ppi = df_annotate_ppi.reindex(list_index)
 
-colormap_sns = sns.diverging_palette(240, 20, s=90, l=40, as_cmap=True, center='light', sep=10)
 
 fig, ax1 = plt.subplots(1, figsize=(30, 10), dpi=300)
 res = sns.heatmap(df_heatmap_ppi, mask=df_heatmap_ppi.isna(),
                   vmin=0.0,
                   vmax=1.0,
-                  center=0.5, cmap='bwr_r',
+                  center=0.5, cmap='Purples_r',
                   linewidths=4, square=True, linecolor='white',
                   annot=df_annotate_ppi, fmt='', ax=ax1,
                   annot_kws={"fontsize": 14, "weight": 'bold'},
