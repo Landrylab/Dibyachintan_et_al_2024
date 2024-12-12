@@ -53,13 +53,12 @@ df_median = df_median.set_index('position')
 df_heatmap_ppi = df_median.transpose()
 fig, ax = plt.subplots(1, 1, figsize=(30, 1.4))
 
-colormap_sns = sns.diverging_palette(150, 275, s=90, l=40, as_cmap=True, center='light', sep=40)
 
 
 res = sns.heatmap(df_heatmap_ppi, mask=df_heatmap_ppi.isna(),
                   vmin=0.0,
                   vmax=1.0,
-                  center=0.5, cmap='bwr_r',
+                  center=0.5, cmap='Purples_r',
                   linewidths=5, square=True, linecolor='white',
                   ax=ax,
                   cbar=False)
